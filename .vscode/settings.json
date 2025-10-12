@@ -1,0 +1,8 @@
+{
+	// 表示の除外
+	"files.exclude": {
+		"**/.git": true,
+		"**/.venv": true,
+		"**/__pycache__": true,
+	},
+}
