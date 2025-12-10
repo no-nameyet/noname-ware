@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+/*	=====================================================
+	ヘルプダイアログ
+	===================================================== */
+.ctm-dialog-help {
+	--m-help-padding_top: 8px;
+	--m-help-padding_bottom: 8px;
+	/* タブラベル */
+	--m-help-tab-width: 120px;
+	--m-help-tab-gap: 6px;
+	--m-help-tab-padding_vertical: 0.5em;
+	--m-help-tab-padding_horizontal: 12px;
+	--m-help-tab-background_color: #666666;
+	--m-help-tab-font_color: #fff;
+	--m-help-tab-font_size: 18px;
+	/* タブラベル:選択 */
+	--m-help-tab-background_color--selected: #97C02F;
+	/* タブラベル:非活性 */
+	--m-help-tab-background_color--disabled: #cccccc;
+	/* タブラベルの裏 */
+	--m-help-tab_reverse-size: 16px;
+	--m-help-tab_reverse-background_color: #333333;
+	--m-help-tab_reverse-blank_color: var(--m-dialog-color);
+	--m-help-tab_reverse-shadow: 1px;
+	--m-help-tab_reverse-shadow_color: #00000033;
+	--m-help-tab_reverse-animation_time: 0.3s;
+	/* タブラベルの裏:選択 */
+	--m-help-tab_reverse-background_color--selected: #658E15;
+	/* タブラベルの裏:非活性 */
+	--m-help-tab_reverse-background_color--disabled: #999999;
+	/* 記事 */
+	--m-help-content-border: 4px;
+	--m-help-content-padding: 8px;
+	--m-help-content-background: var(--color-content);
+}
+.ctm-dialog-help__body {
+	padding: var(--m-help-padding_top) 0 var(--m-help-padding_bottom);
+}
+.ctm-dialog-help__content {
+	display: grid;
+	grid-template:
+		"help-title" auto
+		"help-content" 1fr
+		/ 1fr;
+	width: 100%;
+	height: 100%;
+}
+.ctm-dialog-help__tab-list {
+	grid-area: help-title;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, var(--m-help-tab-width));
+	gap: var(--m-help-tab-gap);
+	justify-content: center;
+}
+.ctm-dialog-help__tab-label {
+	position: relative;
+	padding: var(--m-help-tab-padding_vertical) var(--m-help-tab-padding_horizontal);
+	text-align: center;
+	overflow: hidden;
+	background: var(--m-help-tab-background_color);
+	font-size: var(--m-help-tab-font_size);
+	color: var(--m-help-tab-font_color);
+	cursor: pointer;
+	user-select: none;
+}
+.ctm-dialog-help__tab-label::before {
+	content: "";
+	position: absolute;
+	display: block;
+	top: 0;
+	right: 0;
+	border-style: solid;
+	border-width: 0 var(--m-help-tab_reverse-size) var(--m-help-tab_reverse-size) 0;
+	border-color: var(--m-help-tab_reverse-blank_color) var(--m-help-tab_reverse-blank_color) var(--m-help-tab_reverse-background_color) var(--m-help-tab_reverse-background_color);
+	box-shadow:
+		0 var(--m-help-tab_reverse-shadow_color) var(--m-help-tab_reverse-shadow_color) var(--m-help-tab_reverse-shadow_color),
+		calc(var(--m-help-tab_reverse-shadow_color) * -1) var(--m-help-tab_reverse-shadow_color) var(--m-help-tab_reverse-shadow_color) var(--m-help-tab_reverse-shadow_color);
+	transition:
+		border-width var(--m-help-tab_reverse-animation_time) ease,
+		border-color var(--m-help-tab_reverse-animation_time) ease;
+}
+.ctm-dialog-help__tab-label:hover::before {
+	border-width: 0 0 0 0;
+	border-color: transparent;
+}
+.ctm-dialog-help__tab-text {
+	grid-area: help-content;
+	display: none;
+	height: stretch;
+	border-top: solid var(--m-help-content-border) var(--m-help-tab-background_color--selected);
+	background: var(--m-help-content-background);
+	padding: var(--m-help-content-padding);
+}
+.ctm-dialog-help__radio {
+	display: none;
+}
+.ctm-dialog-help__radio--site:disabled ~ .ctm-dialog-help__tab-list > .ctm-dialog-help__tab-label--site,
+.ctm-dialog-help__radio--tool:disabled ~ .ctm-dialog-help__tab-list > .ctm-dialog-help__tab-label--tool {
+	background: var(--m-help-tab-background_color--disabled);
+	cursor: default;
+}
+.ctm-dialog-help__radio--site:disabled ~ .ctm-dialog-help__tab-list > .ctm-dialog-help__tab-label--site::before,
+.ctm-dialog-help__radio--tool:disabled ~ .ctm-dialog-help__tab-list > .ctm-dialog-help__tab-label--tool::before {
+	border-color: var(--m-help-tab_reverse-blank_color) var(--m-help-tab_reverse-blank_color) var(--m-help-tab_reverse-background_color--disabled) var(--m-help-tab_reverse-background_color--disabled);
+}
+.ctm-dialog-help__radio--site:checked ~ .ctm-dialog-help__tab-list > .ctm-dialog-help__tab-label--site,
+.ctm-dialog-help__radio--tool:checked ~ .ctm-dialog-help__tab-list > .ctm-dialog-help__tab-label--tool {
+	background: var(--m-help-tab-background_color--selected);
+}
+.ctm-dialog-help__radio--site:checked ~ .ctm-dialog-help__tab-list > .ctm-dialog-help__tab-label--site::before,
+.ctm-dialog-help__radio--tool:checked ~ .ctm-dialog-help__tab-list > .ctm-dialog-help__tab-label--tool::before {
+	border-color: var(--m-help-tab_reverse-blank_color) var(--m-help-tab_reverse-blank_color) var(--m-help-tab_reverse-background_color--selected) var(--m-help-tab_reverse-background_color--selected);
+}
+.ctm-dialog-help__radio--site:checked ~ .ctm-dialog-help__tab-text--site,
+.ctm-dialog-help__radio--tool:checked ~ .ctm-dialog-help__tab-text--tool {
+	display: block;
+}

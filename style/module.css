@@ -1,0 +1,44 @@
+@charset "utf-8";
+/*	モジュールＣＳＳ */
+
+/*	=====================================================
+	セクション
+	===================================================== */
+.m-section {
+	--m-section-background: var(--color-content);
+	--m-section-shadow-color: var(--color-shadow);
+	--m-section-shadow: 4px;
+	--m-section-shadow_length: 10px;
+	--m-section-margin_top: var(--m-section-shadow_length);
+	--m-section-margin_side: 12px;
+	--m-section-margin_bottom: calc(var(--m-section-shadow_length) + var(--m-section-shadow));
+	--m-section-border_radius: 5px;
+	--m-section-height--100per: calc(100vh - var(--l-header-height) - var(--l-footer-height) - var(--m-section-margin_top) - var(--m-section-margin_bottom) - var(--l-position) * 2);
+
+	margin: var(--m-section-margin_top) var(--m-section-margin_side) var(--m-section-margin_bottom);
+	border-style: none;
+	border-radius: var(--m-section-border_radius);
+	background-color: var(--m-section-background);
+	box-shadow: var(--m-section-shadow) var(--m-section-shadow) var(--m-section-shadow_length) var(--m-section-shadow-color);
+}
+
+/*	=====================================================
+	フィールドセット
+	===================================================== */
+.m-fieldset {
+	--m-fieldset-background_color: #f6f3f3;
+	--m-fieldset-border_width: 3px;
+	--m-fieldset-border_color: #f984d8;
+	--m-fieldset_legend-padding_vertical: 4px;
+	--m-fieldset_legend-padding_horizontal: 16px;
+	--m-fieldset_legend-font_size: 20px;
+
+	border: solid var(--m-fieldset-border_width) var(--m-fieldset-border_color);
+	background-color: var(--m-fieldset-background_color);
+}
+.m-fieldset > .m-fieldset__legend {
+	background-color: var(--m-fieldset-border_color);
+	box-shadow: none;
+	padding: var(--m-fieldset_legend-padding_vertical) var(--m-fieldset_legend-padding_horizontal);
+	font-size: var(--m-fieldset_legend-font_size);
+}

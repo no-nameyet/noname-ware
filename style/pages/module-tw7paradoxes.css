@@ -1,0 +1,174 @@
+@charset "utf-8";
+
+.m-tw7pdx {
+	--paradox-color-pow: #F9E1EC;
+	--paradox-color-spd: #D5E3F0;
+	--paradox-color-wiz: #D6FFE9;
+	--paradox-border-pow: #D13A7C;
+	--paradox-border-spd: #4366A1;
+	--paradox-border-wiz: #378067;
+}
+
+/*	=====================================================
+	検索条件
+	===================================================== */
+.m-tw7pdx__condition {
+	padding: 12px 6px;
+	text-align: right;
+}
+.m-tw7pdx__field {
+	width: 594px;
+	margin: 12px auto;
+}
+@media (max-width: 666px) {
+	.m-tw7pdx__field {
+		max-width: 400px;
+		width: 100%;
+	}
+}
+.m-tw7pdx__legend {
+	text-align: left;
+}
+.m-tw7pdx__condition-group {
+	max-width: 720px;
+	width: stretch;
+	margin: 0 auto 18px;
+	text-align: left;
+}
+@media (max-width: 666px) {
+	.m-tw7pdx__condition-group {
+		max-width: 320px;
+	}
+}
+
+/* 能力・対象 */
+.m-tw7pdx__condition-status {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 2px;
+}
+@media (max-width: 666px) {
+	.m-tw7pdx__condition-status {
+		grid-template-columns: repeat(2, 1fr);
+		max-width: 320px;
+	}
+}
+/* 能力・対象：カウンター */
+.m-tw7pdx__condition-status-counter {
+	margin: 1px;
+}
+curry-counter.m-tw7pdx__condition-status-counter-pow {
+	--arg-border-color: var(--paradox-border-pow);
+	--arg-font-color: var(--paradox-border-pow);
+	--arg-back-color: var(--paradox-color-pow);
+}
+curry-counter.m-tw7pdx__condition-status-counter-spd {
+	--arg-border-color: var(--paradox-border-spd);
+	--arg-font-color: var(--paradox-border-spd);
+	--arg-back-color: var(--paradox-color-spd);
+}
+curry-counter.m-tw7pdx__condition-status-counter-wiz {
+	--arg-border-color: var(--paradox-border-wiz);
+	--arg-font-color: var(--paradox-border-wiz);
+	--arg-back-color: var(--paradox-color-wiz);
+}
+
+/* スキル上限 */
+.m-tw7pdx__filter-skill-counter {
+	max-width: 240px;
+}
+
+/* 必須スキル */
+.m-tw7pdx__filter-skill-list {
+	width: 100%;
+}
+
+.m-tw7pdx__infomation {
+	display: grid;
+	grid-template:
+		"pdx-msg pdx-btn" auto / 1fr 180px;
+	line-height: 2em;
+}
+.m-tw7pdx__message {
+	grid-area: pdx-msg;
+	color: red;
+	text-align: left;
+}
+/** 絞り込みボタン */
+.m-tw7pdx__execute {
+	grid-area: pdx-btn;
+	box-sizing: border-box;
+	width: 180px;
+	padding: 0 24px;
+	text-align:justify;
+	text-align-last:justify;
+	background-color: var(--color-main);
+}
+.m-tw7pdx__execute:hover {
+	box-shadow: 2px 2px #353535;
+	transform: translate(-2px, -2px);
+}
+.m-tw7pdx__execute:active {
+	box-shadow: 0 0;
+	transform: initial;
+}
+
+.m-tw7pdx__result {
+	width: 100%;
+}
+.m-tw7pdx__data {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	padding: 8px 0;
+	gap: 3px;
+}
+.m-tw7pdx__data-paradox {
+	margin: 0 4px;
+	padding: 6px;
+	border-radius: 6px;
+	color: var(--color-font-text);
+}
+.m-tw7pdx__data-paradox--pow {
+	border: solid 1px var(--paradox-border-pow);
+	background-color: var(--paradox-color-pow);
+}
+.m-tw7pdx__data-paradox--spd {
+	border: solid 1px var(--paradox-border-spd);
+	background-color: var(--paradox-color-spd);
+}
+.m-tw7pdx__data-paradox--wiz {
+	border: solid 1px var(--paradox-border-wiz);
+	background-color: var(--paradox-color-wiz);
+}
+.m-tw7pdx__data-paradox-title,
+.m-tw7pdx__data-paradox-skill {
+	width: 100%;
+	padding: 2px 0;
+}
+.m-tw7pdx__data-paradox-name {
+	font-weight: bold;
+}
+.m-tw7pdx__data-paradox--pow .m-tw7pdx__data-paradox-name {
+	color: var(--paradox-border-pow);
+}
+.m-tw7pdx__data-paradox--spd .m-tw7pdx__data-paradox-name {
+	color: var(--paradox-border-spd);
+}
+.m-tw7pdx__data-paradox--wiz .m-tw7pdx__data-paradox-name {
+	color: var(--paradox-border-wiz);
+}
+.m-tw7pdx__data-paradox-type {
+}
+.m-tw7pdx__data-paradox-type::before {
+	content: "(";
+}
+.m-tw7pdx__data-paradox-type::after {
+	content: ")";
+}
+.m-tw7pdx__data-paradox-skill {
+	list-style-position: unset;
+	padding-left: 8px;
+}
+.m-tw7pdx__data-paradox-skill::before {
+	content: "・";
+}

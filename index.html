@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<!-- 基本設定 -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>🏠 | noname-ware</title>
+	<base href="./">
+
+	<!-- SEO -->
+	<meta name="description" content="ブラウザ上で使えるゲーム向けの支援ツールの公開ページ。">
+	<meta name="keywords" content="Webツール, 技術, ゲーム支援">
+	<meta name="author" content="no-nameyet">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="🏠 | noname-ware">
+	<meta name="twitter:description" content="ブラウザ上で使えるゲーム向けの支援ツールの公開ページ。">
+	<meta name="twitter:image" content="https://no-nameyet.github.io/noname-ware/assets/images/summary-card.jpg">
+
+	<!-- Open Graph -->
+	<meta property="og:title" content="🏠 | noname-ware">
+	<meta property="og:description" content="ブラウザ上で使えるゲーム向けの支援ツールの公開ページ。">
+	<meta property="og:image" content="https://no-nameyet.github.io/noname-ware/assets/images/og-card.jpg">
+	<meta property="og:url" content="https://no-nameyet.github.io/noname-ware/">
+	<meta property="og:type" content="website">
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/icon/32x32.ico">
+	<link rel="icon" type="image/png" sizes="48x48" href="./assets/icon/48x48.ico">
+	<link rel="icon" type="image/png" sizes="64x64" href="./assets/icon/64x64.ico">
+	<link rel="icon" type="image/png" sizes="128x128" href="./assets/icon/128x128.ico">
+	<link rel="icon" type="image/png" sizes="180x180" href="./assets/icon/180x180.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="./assets/icon/180x180.ico">
+
+	<!-- Webフォントの読み込み -->
+	<link rel="preload" as="font" href="./assets/fonts/OpenMoji-color-colr0_svg.woff2" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="./style/import.css">
+	<!-- JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<script src="https://no-nameyet.github.io/rust-elixir/rustelixir-storage.js"></script>
+	<script src="https://no-nameyet.github.io/rust-elixir/rustelixir-ui.js"></script>
+	<script src="./components/page-ui.js" defer></script>
+	<script src="./scripts/menu.js"></script>
+	<script src="./scripts/storage.js"></script>
+	<script src="./scripts/defer-scripts.js" defer></script>
+	<script type="module" src="./scripts/module/common-module.js"></script>
+
+	<!-- ページ固有 -->
+	<link rel="stylesheet" href="./style/pages/module-home.css">
+</head>
+
+<body class="l">
+	<footer class="l__footer"></footer>
+	<header class="l__header l-header"></header>
+	<main class="l__main m-home">
+		<div class="m-home__section m-section">
+		</div>
+	</main>
+	<help-dialog></help-dialog>
+	<menu-dialog></menu-dialog>
+</body>
+</html>
