@@ -49,6 +49,9 @@ document.querySelector('.m-tw7pdx__execute').addEventListener('click', async eve
 			data.forEach(paradox => {
 				const paradoxNode = document.importNode(document.querySelector('.template-tw7pdx__paradox').content, true);
 				const paradoxTag = paradoxNode.querySelector('.m-tw7pdx__data-paradox');
+				paradoxTag.addEventListener('dblclick', () => {
+					window.open(`https://tw7.t-walker.jp/garage/gravity/create/#${paradox.id}`, '_blank');
+				});
 				dataTag.appendChild(paradoxNode);
 				paradoxTag.classList.toggle('m-tw7pdx__data-paradox--pow', paradox.status === 'POW');
 				paradoxTag.classList.toggle('m-tw7pdx__data-paradox--spd', paradox.status === 'SPD');
