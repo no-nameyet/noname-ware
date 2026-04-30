@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<!-- 基本設定 -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>⛓ | noname-ware</title>
+	<base href="../">
+
+	<!-- SEO -->
+	<meta name="description" content="チェインパラドクスのパラドクスの組み合わせを絞り込むツール。">
+	<meta name="keywords" content="Webツール, 技術, ゲーム支援">
+	<meta name="author" content="no-nameyet">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="⛓ | noname-ware">
+	<meta name="twitter:description" content="チェインパラドクスのパラドクスの組み合わせを絞り込むツール。">
+	<meta name="twitter:image" content="https://no-nameyet.github.io/noname-ware/assets/images/summary-card.jpg">
+
+	<!-- Open Graph -->
+	<meta property="og:title" content="⛓ | noname-ware">
+	<meta property="og:description" content="チェインパラドクスのパラドクスの組み合わせを絞り込むツール。">
+	<meta property="og:image" content="https://no-nameyet.github.io/noname-ware/assets/images/og-card.jpg">
+	<meta property="og:url" content="https://no-nameyet.github.io/noname-ware/tw7-paradoxes/">
+	<meta property="og:type" content="website">
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/icon/32x32.ico">
+	<link rel="icon" type="image/png" sizes="48x48" href="./assets/icon/48x48.ico">
+	<link rel="icon" type="image/png" sizes="64x64" href="./assets/icon/64x64.ico">
+	<link rel="icon" type="image/png" sizes="128x128" href="./assets/icon/128x128.ico">
+	<link rel="icon" type="image/png" sizes="180x180" href="./assets/icon/180x180.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="./assets/icon/180x180.ico">
+
+	<!-- Webフォントの読み込み -->
+	<link rel="preload" as="font" href="./assets/fonts/OpenMoji-color-colr0_svg.woff2" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="./style/import.css">
+	<!-- JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<script src="https://no-nameyet.github.io/rust-elixir/rustelixir-storage.js"></script>
+	<script src="https://no-nameyet.github.io/rust-elixir/rustelixir-ui.js"></script>
+	<script src="./components/page-ui.js" defer></script>
+	<script src="./scripts/menu.js"></script>
+	<script src="./scripts/storage.js"></script>
+	<script src="./scripts/defer-scripts.js" defer></script>
+	<script type="module" src="./scripts/module/common-module.js"></script>
+
+	<!-- ページ固有 -->
+	<link rel="stylesheet" href="./style/pages/module-tw7paradoxes.css">
+	<script type="module" src="./scripts/module/tw7paradoxes.js" async></script>
+	<script>
+		CurryCounter.include();
+		TagSelector.include();
+
+		document.addEventListener('DOMContentLoaded', _ => {
+			document.querySelector('loading-dialog').dispatchEvent(new CustomEvent('loading-dialog::show', {
+				bubbles: true,
+				composed: true,
+				cancelable: true,
+				detail: {},
+			}));
+		});
+	</script>
+</head>
+
+<body class="l">
+	<footer class="l__footer"></footer>
+	<header class="l__header l-header"></header>
+	<main class="l__main m-tw7pdx">
+		<div class="m-section m-tw7pdx__condition">
+			<fieldset class="m-fieldset m-tw7pdx__field">
+				<legend class="m-fieldset__legend m-tw7pdx__legend">検索条件</legend>
+				<div class="m-tw7pdx__condition-group m-tw7pdx__condition-status">
+					<curry-counter class="m-tw7pdx__condition-status-counter m-tw7pdx__condition-status-counter-pow" max="10" value="0" data-condition="pow1">POW_1</curry-counter>
+					<curry-counter class="m-tw7pdx__condition-status-counter m-tw7pdx__condition-status-counter-pow" max="10" value="0" data-condition="pow2">POW_2</curry-counter>
+					<curry-counter class="m-tw7pdx__condition-status-counter m-tw7pdx__condition-status-counter-pow" max="10" value="0" data-condition="pow3">POW_3</curry-counter>
+					<curry-counter class="m-tw7pdx__condition-status-counter m-tw7pdx__condition-status-counter-pow" max="10" value="0" data-condition="pow4">POW_4</curry-counter>
+					<curry-counter class="m-tw7pdx__condition-status-counter m-tw7pdx__condition-status-counter-spd" max="10" value="0" data-condition="spd1">SPD_1</curry-counter>
+					<curry-counter class="m-tw7pdx__condition-status-counter m-tw7pdx__condition-status-counter-spd" max="10" value="0" data-condition="spd2">SPD_2</curry-counter>
+					<curry-counter class="m-tw7pdx__condition-status-counter m-tw7pdx__condition-status-counter-spd" max="10" value="0" data-condition="spd3">SPD_3</curry-counter>
+					<curry-counter class="m-tw7pdx__condition-status-counter m-tw7pdx__condition-status-counter-spd" max="10" value="0" data-condition="spd4">SPD_4</curry-counter>
+					<curry-counter class="m-tw7pdx__condition-status-counter m-tw7pdx__condition-status-counter-wiz" max="10" value="0" data-condition="wiz1">WIZ_1</curry-counter>
+					<curry-counter class="m-tw7pdx__condition-status-counter m-tw7pdx__condition-status-counter-wiz" max="10" value="0" data-condition="wiz2">WIZ_2</curry-counter>
+					<curry-counter class="m-tw7pdx__condition-status-counter m-tw7pdx__condition-status-counter-wiz" max="10" value="0" data-condition="wiz3">WIZ_3</curry-counter>
+					<curry-counter class="m-tw7pdx__condition-status-counter m-tw7pdx__condition-status-counter-wiz" max="10" value="0" data-condition="wiz4">WIZ_4</curry-counter>
+				</div>
+				<div class="m-tw7pdx__condition-group">
+					<curry-counter class="m-tw7pdx__filter-skill-counter" min="3" max="20" value="5" data-condition="maxSkill">スキル上限</curry-counter>
+				</div>
+				<div class="m-tw7pdx__condition-group">
+					<tag-selector class="m-tw7pdx__filter-skill-list" data-condition="skills">必須スキル</tag-selector>
+				</div>
+			</fieldset>
+			<div class="m-tw7pdx__field m-tw7pdx__infomation">
+				<div class="m-tw7pdx__message"></div>
+				<button type="button" class="m-tw7pdx__execute">絞り込み実行</button>
+			</div>
+		</div>
+		<div class="m-tw7pdx__result"></div>
+		<template class="template-tw7pdx__data">
+			<dl class="m-section m-tw7pdx__data"></dl>
+		</template>
+		<template class="template-tw7pdx__paradox">
+			<div class="m-tw7pdx__data-paradox">
+				<dt class="m-tw7pdx__data-paradox-title">
+					<span class="m-tw7pdx__data-paradox-name"></span>
+					<span class="m-tw7pdx__data-paradox-type"></span>
+				</dt>
+			</div>
+		</template>
+		<template class="template-tw7pdx__data-paradox-skill">
+			<dd class="m-tw7pdx__data-paradox-skill"></dd>
+		</template>
+	</main>
+	<help-dialog></help-dialog>
+	<menu-dialog></menu-dialog>
+	<loading-dialog></loading-dialog>
+</body>
+</html>

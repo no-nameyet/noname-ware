@@ -1,0 +1,62 @@
+@charset "utf-8";
+/*	コンポーネントＣＳＳ */
+
+/*	=====================================================
+	ダイアログ共通デザイン
+	===================================================== */
+@keyframes m-dialog-fade {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+.m-dialog {
+	--m-dialog-width: calc(100vw * 0.9);
+	--m-dialog-max_width: 1080px;
+	--m-dialog-height: calc(100% - 128px);
+	--m-dialog-max_height: 540px;
+	--m-dialog-top: 104px;
+	--m-dialog-border_color: var(--color-main);
+	--m-dialog-border_width: 4px;
+	--m-dialog-borer_radius: 15px;
+	--m-dialog-padding_vertical: 3px;
+	--m-dialog-padding_horizontal: 8px;
+	--m-dialog-color: var(--color-base);
+	--m-dialog-outer_border_color: var(--color-base);
+	--m-dialog-outer_border-width: 1px;
+	--m-dialog-shadow_color: var(--color-shadow);
+	--m-dialog-shadow: 12px;
+	--m-dialog-shadow_length: 24px;
+	--m-dialog-animation_time: 0.5s;
+
+	top: var(--m-dialog-top);
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: var(--m-dialog-width);
+	max-width: var(--m-dialog-max_width);
+	height: var(--m-dialog-height);
+	max-height: var(--m-dialog-max_height);
+	border: solid var(--m-dialog-border_width) var(--m-dialog-border_color);
+	border-radius: var(--m-dialog-borer_radius);
+	padding: var(--m-dialog-padding_vertical) var(--m-dialog-padding_horizontal);
+	background-color: var(--m-dialog-color);
+	box-shadow:
+		calc(var(--m-dialog-outer_border-width) * -1) calc(var(--m-dialog-outer_border-width) * -1) var(--m-dialog-outer_border_color),
+		calc(var(--m-dialog-outer_border-width) * -1) var(--m-dialog-outer_border-width) var(--m-dialog-outer_border_color),
+		var(--m-dialog-outer_border-width) calc(var(--m-dialog-outer_border-width) * -1) var(--m-dialog-outer_border_color),
+		var(--m-dialog-outer_border-width) var(--m-dialog-outer_border-width) var(--m-dialog-outer_border_color),
+		var(--m-dialog-shadow) var(--m-dialog-shadow) var(--m-dialog-shadow_length) var(--m-dialog-shadow_color);
+}
+.m-dialog[open] {
+	animation: m-dialog-fade var(--m-dialog-animation_time) ease forwards;
+}
+.m-dialog__body {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
