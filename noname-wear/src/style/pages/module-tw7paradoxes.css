@@ -127,6 +127,7 @@ curry-counter.m-tw7pdx__condition-status-counter-wiz {
 	padding: 6px;
 	border-radius: 6px;
 	color: var(--color-font-text);
+	cursor: pointer;
 }
 .m-tw7pdx__data-paradox--pow {
 	border: solid 1px var(--paradox-border-pow);
